@@ -1,15 +1,13 @@
 import Router from 'src/routes/router';
-import styled from 'styled-components';
+import { theme } from 'src/styles/Theme';
 
-const StyledApp = styled.div`
-  // Your style here
-`;
+import { ThemeProvider } from 'styled-components';
 
 export function App() {
   return (
-    <StyledApp>
+    <ThemeProvider theme={theme}>
       <Router />
-    </StyledApp>
+    </ThemeProvider>
   );
 }
 

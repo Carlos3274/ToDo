@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  color: pink;
+  background: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.textPrimary};
 `;
