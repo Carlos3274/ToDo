@@ -1,5 +1,5 @@
 import Router from 'src/routes/router';
-import { theme } from 'src/styles/Theme';
+import { theme } from 'src/styles/theme';
 
 import { ThemeProvider } from 'styled-components';
 
