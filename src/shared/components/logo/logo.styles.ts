@@ -11,6 +11,7 @@ export const Title = styled.h1`
 `;
 
 export const TitleTo = styled.span`
+  margin-left: 0.25rem;
   color: ${(props) => props.theme.colors.textSecondary};
 `;
 export const TitleDo = styled.span`
