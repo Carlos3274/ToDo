@@ -4,7 +4,12 @@ import * as S from './login-page.styles';
 const LoginPage: React.FC = () => {
   return (
     <S.Wrapper>
-      <Logo />
+      <S.Container>
+        <S.LogoWrapper>
+          <Logo />
+        </S.LogoWrapper>
+        <S.Title>Autenticação</S.Title>
+      </S.Container>
     </S.Wrapper>
   );
 };

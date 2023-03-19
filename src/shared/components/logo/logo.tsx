@@ -5,7 +5,6 @@ const Logo: React.FC = () => {
   return (
     <S.Title>
       <LogoIcon />
-
       <S.TitleTo>To</S.TitleTo>
       <S.TitleDo>Do</S.TitleDo>
     </S.Title>
