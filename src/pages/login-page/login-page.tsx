@@ -2,9 +2,9 @@ import * as S from './login-page.styles';
 
 const LoginPage: React.FC = () => {
   return (
-    <S.Container>
+    <S.Wrapper>
       <h1>Welcome to LoginPage!</h1>
-    </S.Container>
+    </S.Wrapper>
   );
 };
 
