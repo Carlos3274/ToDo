@@ -1,18 +1,14 @@
-import { InputProps, LabelProps } from 'src/shared/types';
-import Input from '../input/input';
-import Label from '../label/label';
+import { Form } from 'react-bootstrap';
 
-type Props = {
-  labelProps: LabelProps;
-  inputProps: InputProps;
-};
-
-const TextInput: React.FC<Props> = ({ labelProps, inputProps }) => {
+const TextInput: React.FC = () => {
   return (
-    <>
-      <Label {...labelProps} />
-      <Input {...inputProps} />
-    </>
+    <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Label>Email</Form.Label>
+      <Form.Control type="email" placeholder="Enter email" />
+      <Form.Text className="text-muted">
+        We'll never share your email with anyone else.
+      </Form.Text>
+    </Form.Group>
   );
 };
 
