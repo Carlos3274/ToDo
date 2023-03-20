@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  /* display: flex;
+  justify-content: center; */
   background: ${(props) => props.theme.colors.primary};
   color: ${(props) => props.theme.colors.textSecondary};
 
@@ -38,4 +40,9 @@ export const Title = styled.h2`
     background: ${(props) => props.theme.colors.brand};
     margin-right: 0.5rem;
   }
+`;
+
+export const FormWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
