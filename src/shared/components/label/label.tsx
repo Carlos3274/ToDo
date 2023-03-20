@@ -1,7 +1,7 @@
-import { TextInputProps } from 'src/shared/types';
+import { LabelProps } from 'src/shared/types';
 
-const TextInput: React.FC<TextInputProps> = ({ ...rest }) => {
+const Label: React.FC<LabelProps> = ({ ...rest }) => {
   return <label {...rest} />;
 };
 
-export default TextInput;
+export default Label;

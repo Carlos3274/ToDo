@@ -1,4 +1,4 @@
-export type TextInputProps = React.DetailedHTMLProps<
+export type LabelProps = React.DetailedHTMLProps<
   React.LabelHTMLAttributes<HTMLLabelElement>,
   HTMLLabelElement
 >;
