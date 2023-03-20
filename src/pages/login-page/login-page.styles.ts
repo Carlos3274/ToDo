@@ -4,9 +4,8 @@ export const Wrapper = styled.html`
   background: ${(props) => props.theme.colors.primary};
   color: ${(props) => props.theme.colors.textSecondary};
 
-  height: 100vh;
-  width: 100vw;
   padding-top: 3.5rem;
+  min-height: 100vh;
 
   @media (min-width: 600px) {
     background: green;
