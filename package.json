@@ -47,9 +47,11 @@
     "vitest": "^0.25.8"
   },
   "dependencies": {
+    "polished": "^4.2.2",
     "react": "18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
     "react-is": "18.2.0",
     "react-router-dom": "^6.8.2",
     "styled-components": "5.3.6"
