@@ -1,20 +1,19 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  /* display: flex;
-  justify-content: center; */
   background: ${(props) => props.theme.colors.primary};
   color: ${(props) => props.theme.colors.textSecondary};
 
   padding-top: 3.5rem;
   min-height: 100vh;
-
-  @media (min-width: 600px) {
-    background: green;
-  }
 `;
 
 export const Container = styled.div`
+  @media (min-width: 600px) {
+    max-width: 19.75rem;
+    margin: auto;
+  }
   margin-inline: 1.375rem;
 `;
 
@@ -31,7 +30,6 @@ export const Title = styled.h2`
   font-weight: 600;
   font-size: 1.375rem;
   line-height: 2rem;
-  margin-bottom: 1.5rem;
 
   &::before {
     content: '';
@@ -43,7 +41,15 @@ export const Title = styled.h2`
   }
 `;
 
+export const RegisterLink = styled(Link)`
+  color: ${(props) => props.theme.colors.brand};
+  font-weight: 600;
+  align-self: center;
+  text-decoration: none;
+`;
+
 export const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
 `;
