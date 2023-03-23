@@ -1,15 +1,33 @@
-import { Form } from 'react-bootstrap';
+import { forwardRef } from 'react';
+import { FormControl } from 'react-bootstrap';
 
-const TextInput: React.FC = () => {
-  return (
-    <Form.Group className="mb-3" controlId="formBasicEmail">
-      <Form.Label>Email</Form.Label>
-      <Form.Control type="email" placeholder="Enter email" />
-      <Form.Text className="text-muted">
-        We'll never share your email with anyone else.
-      </Form.Text>
-    </Form.Group>
-  );
-};
+import { TextInputProps } from '../../types';
 
-export default TextInput;
+import { withBaseInput } from '../hocs/with-base-input';
+import * as S from './text-input.styles';
+
+const TextInput: React.FC<TextInputProps> = forwardRef(
+  ({ label, error, leftIcon: LeftIcon, className, ...rest }, ref) => {
+    const isInvalid = error !== undefined;
+
+    return (
+      <S.InputWrapper
+        isInvalid={isInvalid}
+        isDisabled={rest.disabled === true}
+        hasLeftIcon={LeftIcon !== undefined}
+        className={className}
+      >
+        {LeftIcon && <LeftIcon />}
+        <FormControl
+          ref={ref}
+          isInvalid={isInvalid}
+          className={`form-control ${isInvalid && 'is-invalid'}`}
+          autoComplete="off"
+          {...rest}
+        />
+      </S.InputWrapper>
+    );
+  }
+);
+
+export default withBaseInput(TextInput);
