@@ -1,14 +1,11 @@
-import { Form, Row } from 'react-bootstrap';
-import TextInput from 'src/shared/components/text-input/text-input';
-
+import { TextInput } from 'src/shared';
+import * as S from './login-form.styles';
 const LoginForm: React.FC = () => {
   return (
-    <Form>
-      <Row>
-        <TextInput label="E-mail" />
-        <TextInput label="Senha" />
-      </Row>
-    </Form>
+    <S.FormWrapper>
+      <TextInput label="E-mail" type="email" />
+      <TextInput label="Senha" type="password" />
+    </S.FormWrapper>
   );
 };
 

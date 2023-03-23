@@ -17,11 +17,6 @@ declare module 'styled-components' {
       success: string;
       warning: string;
       danger: string;
-      gray: string;
-
-      borderInput: string;
-      backgroundInput: string;
-      backgroundInputDisabled: string;
     };
 
     font: {

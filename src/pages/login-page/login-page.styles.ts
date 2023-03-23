@@ -31,6 +31,7 @@ export const Title = styled.h2`
   font-weight: 600;
   font-size: 1.375rem;
   line-height: 2rem;
+  margin-bottom: 1.5rem;
 
   &::before {
     content: '';
