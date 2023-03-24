@@ -4,7 +4,7 @@
 
 ## Sobre 👨‍💻
 
-Este projeto trata-se de uma aplicação web responsiva para cadastro, organização e atribuição de tarefas e outras funcionalidades. Bem como será possível criar alertas e fazer listas de anotações.
+Este projeto trata-se de uma aplicação web responsiva para cadastro, organização e atribuição de tarefas. Também será possível criar alertas e fazer listas de anotações, bem como outras funcionalidades
 
 ## Tecnologias ⚙️
 
