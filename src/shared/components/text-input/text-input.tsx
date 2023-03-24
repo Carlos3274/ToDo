@@ -1,11 +1,17 @@
 import { TextInputProps } from 'src/shared/types';
 import * as S from './text-input.styles';
 
-const TextInput: React.FC<TextInputProps> = ({ label, ...rest }) => {
+const TextInput: React.FC<TextInputProps> = ({
+  label,
+  error,
+  isRequired,
+  ...rest
+}) => {
   return (
-    <S.InputWrapper>
+    <S.InputWrapper error={error} isRequired={isRequired}>
       <label>{label}</label>
-      <input type="text" {...rest} />
+      <input {...rest} />
+      {error !== undefined && <span>{error}</span>}
     </S.InputWrapper>
   );
 };

@@ -5,6 +5,7 @@ import * as S from './authentication-form.styles';
 type Props = {
   isRegister?: boolean;
 };
+
 const AuthenticationForm: React.FC<Props> = ({ isRegister }) => {
   return (
     <S.ContentWrapper>
@@ -20,23 +21,27 @@ const AuthenticationForm: React.FC<Props> = ({ isRegister }) => {
                 label="Nome"
                 type="text"
                 placeholder="Digite seu nome"
+                isRequired={isRegister && true}
               />
             )}
             <TextInput
               label="E-mail"
               type="email"
               placeholder="exemplo@email.com"
+              isRequired={isRegister && true}
             />
             <TextInput
               label="Senha"
               type="password"
               placeholder="Digite sua senha"
+              isRequired={isRegister && true}
             />
             {isRegister && (
               <TextInput
                 label="Confirmar senha"
                 type="password"
                 placeholder="Confirme a senha"
+                isRequired={isRegister && true}
               />
             )}
           </S.InputContainer>
