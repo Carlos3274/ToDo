@@ -1,4 +1,4 @@
-import { SubmitHandler, useFormContext } from 'react-hook-form';
+import { useFormContext } from 'react-hook-form';
 import {
   AuthenticationFormInput,
   FormTitle,
@@ -10,10 +10,10 @@ import * as S from './authentication-form.styles';
 
 type Props = {
   isRegister?: boolean;
-  onSubmit: SubmitHandler<AuthenticationFormInput>;
+  // onSubmit: SubmitHandler<AuthenticationFormInput>;
 };
 
-const AuthenticationForm: React.FC<Props> = ({ isRegister, onSubmit }) => {
+const AuthenticationForm: React.FC<Props> = ({ isRegister }) => {
   const { handleSubmit, register, formState } =
     useFormContext<AuthenticationFormInput>();
 
@@ -23,7 +23,7 @@ const AuthenticationForm: React.FC<Props> = ({ isRegister, onSubmit }) => {
         <S.LogoWrapper>
           <Logo />
         </S.LogoWrapper>
-        <S.FormWrapper onSubmit={handleSubmit(onSubmit)}>
+        <S.FormWrapper>
           <FormTitle>{isRegister ? 'Nova Conta' : 'Autenticação'}</FormTitle>
           <S.InputContainer>
             {isRegister && (
