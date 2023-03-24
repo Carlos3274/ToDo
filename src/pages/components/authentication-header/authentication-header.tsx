@@ -1,4 +1,4 @@
-import Logo from '../../logo/logo';
+import { Logo } from 'src/shared';
 import * as S from './authentication-header.styles';
 
 type Props = {

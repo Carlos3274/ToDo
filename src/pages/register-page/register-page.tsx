@@ -1,4 +1,4 @@
-import { AuthenticationForm, AuthenticationHeader } from 'src/shared';
+import { AuthenticationForm, AuthenticationHeader } from '../components';
 
 const RegisterPage: React.FC = () => {
   return (

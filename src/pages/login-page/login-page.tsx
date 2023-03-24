@@ -1,4 +1,4 @@
-import { AuthenticationForm, AuthenticationHeader } from 'src/shared';
+import { AuthenticationForm, AuthenticationHeader } from '../components';
 
 const LoginPage: React.FC = () => {
   return (
@@ -10,3 +10,5 @@ const LoginPage: React.FC = () => {
 };
 
 export default LoginPage;
+
+// CRIAR MÓDULOS
