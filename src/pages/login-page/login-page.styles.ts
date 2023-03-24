@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const ContentWrapper = styled.div`
   background: ${(props) => props.theme.colors.primary};
   color: ${(props) => props.theme.colors.textSecondary};
 
   min-height: 100vh;
 `;
 
-export const Container = styled.div`
+export const ContentContainer = styled.div`
   padding-top: 3.5rem;
   margin-inline: 1.375rem;
 

@@ -14,8 +14,8 @@ const LoginPage: React.FC = () => {
         <Logo />
         {RegisterLink}
       </S.Header>
-      <S.Wrapper>
-        <S.Container>
+      <S.ContentWrapper>
+        <S.ContentContainer>
           <S.LogoWrapper>
             <Logo />
           </S.LogoWrapper>
@@ -25,8 +25,8 @@ const LoginPage: React.FC = () => {
             <Button>Entrar</Button>
             {RegisterLink}
           </S.FormWrapper>
-        </S.Container>
-      </S.Wrapper>
+        </S.ContentContainer>
+      </S.ContentWrapper>
     </>
   );
 };
