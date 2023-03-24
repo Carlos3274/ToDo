@@ -10,15 +10,17 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   padding-top: 3.5rem;
+  margin-inline: 1.375rem;
+
   header {
     display: none;
   }
 
   @media (min-width: 600px) {
+    padding-top: 5.875rem;
     max-width: 19.75rem;
     margin: auto;
   }
-  margin-inline: 1.375rem;
 `;
 
 export const LogoWrapper = styled.div`
@@ -60,6 +62,12 @@ export const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
+  @media (min-width: 600px) {
+    a {
+      display: none;
+    }
+  }
 `;
 
 export const Header = styled.header`
