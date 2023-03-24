@@ -34,9 +34,9 @@ const AuthenticationForm: React.FC<Props> = ({ isRegister }) => {
             />
             {isRegister && (
               <TextInput
-                label="Nome"
-                type="text"
-                placeholder="Digite seu e-mail"
+                label="Confirmar senha"
+                type="password"
+                placeholder="Confirme a senha"
               />
             )}
           </S.InputContainer>
