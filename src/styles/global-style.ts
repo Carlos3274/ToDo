@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
 
   html, body {
     height: 100%;
+    overflow: hidden;
   }
 
   img, picture, video, canvas, svg {
