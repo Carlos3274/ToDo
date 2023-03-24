@@ -3,7 +3,7 @@ import { TextInputProps } from 'src/shared/types';
 
 import * as S from './text-input.styles';
 
-export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
+const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
   ({ label, isRequired, error, ...rest }, ref) => {
     return (
       <S.InputWrapper error={error} isRequired={isRequired}>
@@ -14,3 +14,5 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
     );
   }
 );
+
+export default TextInput;

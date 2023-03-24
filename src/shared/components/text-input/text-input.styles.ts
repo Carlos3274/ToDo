@@ -16,12 +16,12 @@ export const InputWrapper = styled.div<InputWrapperProps>`
     border-radius: 0.25rem;
     height: 2.375rem;
     padding: 0.5rem;
-  }
 
-  &:focus-visible {
-    border: 1px solid ${(props) => props.theme.colors.brand};
-    border-color: ${(props) => props.theme.colors.brand};
-    outline: none;
+    &:focus-visible {
+      border: 2px solid ${(props) => props.theme.colors.brand};
+      border-color: ${(props) => props.theme.colors.brand};
+      outline: none;
+    }
   }
 
   label:after {

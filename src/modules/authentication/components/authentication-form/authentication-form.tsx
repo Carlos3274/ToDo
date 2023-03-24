@@ -14,7 +14,7 @@ const AuthenticationForm: React.FC<Props> = ({ isRegister }) => {
           <Logo />
         </S.LogoWrapper>
         <S.FormWrapper>
-          <FormTitle>Autenticação</FormTitle>
+          <FormTitle>{isRegister ? 'Nova Conta' : 'Autenticação'}</FormTitle>
           <S.InputContainer>
             {isRegister && (
               <TextInput
