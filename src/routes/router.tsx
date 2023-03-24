@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { LoginPage } from 'src/pages';
+import { LoginPage, RegisterPage } from 'src/pages';
 
 const Router: React.FC = () => {
   return (
@@ -7,6 +7,7 @@ const Router: React.FC = () => {
       <Routes>
         <Route path="*" element={<LoginPage />} />
         <Route path="login" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
       </Routes>
     </BrowserRouter>
   );
