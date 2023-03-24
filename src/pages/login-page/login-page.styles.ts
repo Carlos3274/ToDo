@@ -5,11 +5,15 @@ export const Wrapper = styled.div`
   background: ${(props) => props.theme.colors.primary};
   color: ${(props) => props.theme.colors.textSecondary};
 
-  padding-top: 3.5rem;
   min-height: 100vh;
 `;
 
 export const Container = styled.div`
+  padding-top: 3.5rem;
+  header {
+    display: none;
+  }
+
   @media (min-width: 600px) {
     max-width: 19.75rem;
     margin: auto;
@@ -21,6 +25,10 @@ export const LogoWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 3.5625rem;
+
+  @media (min-width: 600px) {
+    display: none;
+  }
 `;
 
 export const Title = styled.h2`
@@ -52,4 +60,17 @@ export const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+`;
+
+export const Header = styled.header`
+  display: none;
+
+  @media (min-width: 600px) {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    padding: 19px 32px;
+    width: 100%;
+    background-color: ${(props) => props.theme.colors.secondary};
+  }
 `;
