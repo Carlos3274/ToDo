@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { LoginPage, RegisterPage } from 'src/pages';
+import { LoginPage, RegisterPage } from 'src/modules';
 
 const Router: React.FC = () => {
   return (

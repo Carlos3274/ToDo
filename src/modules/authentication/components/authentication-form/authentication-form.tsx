@@ -15,10 +15,30 @@ const AuthenticationForm: React.FC<Props> = ({ isRegister }) => {
         <S.FormWrapper>
           <FormTitle>Autenticação</FormTitle>
           <S.InputContainer>
-            {isRegister && <TextInput label="Nome" type="text" />}
-            <TextInput label="E-mail" type="email" />
-            <TextInput label="Senha" type="password" />
-            {isRegister && <TextInput label="Nome" type="text" />}
+            {isRegister && (
+              <TextInput
+                label="Nome"
+                type="text"
+                placeholder="Digite seu nome"
+              />
+            )}
+            <TextInput
+              label="E-mail"
+              type="email"
+              placeholder="exemplo@email.com"
+            />
+            <TextInput
+              label="Senha"
+              type="password"
+              placeholder="Digite sua senha"
+            />
+            {isRegister && (
+              <TextInput
+                label="Nome"
+                type="text"
+                placeholder="Digite seu e-mail"
+              />
+            )}
           </S.InputContainer>
           <Button>Entrar</Button>
           {isRegister ? (
