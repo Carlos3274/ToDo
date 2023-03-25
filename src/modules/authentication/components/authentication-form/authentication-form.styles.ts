@@ -33,7 +33,6 @@ export const ContentWrapper = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  /* padding-top: 3.5rem; */
   margin-inline: 1.375rem;
 
   header {
@@ -41,7 +40,6 @@ export const ContentContainer = styled.div`
   }
 
   @media (min-width: 600px) {
-    /* padding-top: 5.875rem; */
     max-width: 19.75rem;
     margin: auto;
   }

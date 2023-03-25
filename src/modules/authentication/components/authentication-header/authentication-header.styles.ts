@@ -5,6 +5,7 @@ export const Header = styled.header`
   display: none;
 
   @media (min-width: 600px) {
+    margin-bottom: 4.875rem;
     justify-content: space-between;
     display: flex;
     align-items: center;

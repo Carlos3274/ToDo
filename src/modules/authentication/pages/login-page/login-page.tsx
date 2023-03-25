@@ -2,8 +2,9 @@ import { BaseSyntheticEvent } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { FormProvider, useForm } from 'react-hook-form';
 import { AuthenticationFormInput, auth } from 'src/shared';
+import { Button } from 'src/shared/components/button/button.styles';
 import { AuthenticationForm, AuthenticationHeader } from '../../components';
-
+import * as S from './login-page.styles';
 const LoginPage: React.FC = () => {
   const [CreateUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
@@ -21,7 +22,7 @@ const LoginPage: React.FC = () => {
   // };
   //
   return (
-    <>
+    <S.PageWrapper>
       <AuthenticationHeader />
       <FormProvider {...form}>
         <AuthenticationForm
@@ -33,7 +34,11 @@ const LoginPage: React.FC = () => {
           }}
         />
       </FormProvider>
-    </>
+      <S.ButtonContainer>
+        <Button type="submit">Entrar</Button>
+        <S.RegisterLink to="/login">Não possui uma conta?</S.RegisterLink>
+      </S.ButtonContainer>
+    </S.PageWrapper>
   );
 };
 

@@ -7,8 +7,6 @@ import {
 } from 'src/shared';
 import * as S from './authentication-form.styles';
 
-// AJEITAR A CENTRALIZAÇÃO DOS FORMS com calc do nav
-
 type Props = {
   isRegister?: boolean;
   onSubmit: SubmitHandler<AuthenticationFormInput>;
