@@ -1,5 +1,6 @@
+import { BaseSyntheticEvent } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useForm } from 'react-hook-form';
+import { FormProvider, useForm } from 'react-hook-form';
 import { AuthenticationFormInput, auth } from 'src/shared';
 import { AuthenticationForm, AuthenticationHeader } from '../../components';
 
@@ -12,19 +13,26 @@ const LoginPage: React.FC = () => {
     // resolver: yupResolver(),
   });
 
-  // ESTOU NO MIN 13 DO vídeo FIREBASE
-
   // const onSubmit: SubmitHandler<AuthenticationFormInput> = (data) => {
   //   setIsLoading(true);
   //   login(data.email, data.password).then(() => {
   //     setIsLoading(false);
   //   });
   // };
-
+  //
   return (
     <>
       <AuthenticationHeader />
-      <AuthenticationForm />
+      <FormProvider {...form}>
+        <AuthenticationForm
+          onSubmit={function (
+            data: AuthenticationFormInput,
+            event?: BaseSyntheticEvent<object, any, any> | undefined
+          ): unknown {
+            throw new Error('Function not implemented.');
+          }}
+        />
+      </FormProvider>
     </>
   );
 };

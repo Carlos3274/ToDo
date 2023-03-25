@@ -1,19 +1,20 @@
-import { useFormContext } from 'react-hook-form';
+import { SubmitHandler, useFormContext } from 'react-hook-form';
 import {
   AuthenticationFormInput,
   FormTitle,
   Logo,
   TextInput,
 } from 'src/shared';
-import Button from 'src/shared/components/button/button';
 import * as S from './authentication-form.styles';
+
+// AJEITAR A CENTRALIZAÇÃO DOS FORMS com calc do nav
 
 type Props = {
   isRegister?: boolean;
-  // onSubmit: SubmitHandler<AuthenticationFormInput>;
+  onSubmit: SubmitHandler<AuthenticationFormInput>;
 };
 
-const AuthenticationForm: React.FC<Props> = ({ isRegister }) => {
+const AuthenticationForm: React.FC<Props> = ({ isRegister, onSubmit }) => {
   const { handleSubmit, register, formState } =
     useFormContext<AuthenticationFormInput>();
 
@@ -23,7 +24,7 @@ const AuthenticationForm: React.FC<Props> = ({ isRegister }) => {
         <S.LogoWrapper>
           <Logo />
         </S.LogoWrapper>
-        <S.FormWrapper>
+        <S.FormWrapper onSubmit={handleSubmit(onSubmit)}>
           <FormTitle>{isRegister ? 'Nova Conta' : 'Autenticação'}</FormTitle>
           <S.InputContainer>
             {isRegister && (
@@ -63,14 +64,6 @@ const AuthenticationForm: React.FC<Props> = ({ isRegister }) => {
               />
             )}
           </S.InputContainer>
-          <Button>Entrar</Button>
-          {isRegister ? (
-            <S.RegisterLink to="/login">Já possui uma conta?</S.RegisterLink>
-          ) : (
-            <S.RegisterLink to="/register">
-              Não possui uma conta?
-            </S.RegisterLink>
-          )}
         </S.FormWrapper>
       </S.ContentContainer>
     </S.ContentWrapper>
