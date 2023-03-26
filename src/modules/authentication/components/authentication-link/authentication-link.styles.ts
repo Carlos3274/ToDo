@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 type AuthenticationAnchorProps = {
-  isHeader?: boolean;
+  isheader?: string;
 };
 
 export const AuthenticationAnchor = styled(Link)<AuthenticationAnchorProps>`
@@ -18,6 +18,6 @@ export const AuthenticationAnchor = styled(Link)<AuthenticationAnchorProps>`
   }
 
   @media (min-width: 600px) {
-    display: ${(props) => (props.isHeader ? 'block' : 'none')};
+    display: ${(props) => (props.isheader ? 'block' : 'none')};
   }
 `;

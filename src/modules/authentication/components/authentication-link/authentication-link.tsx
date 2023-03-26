@@ -8,7 +8,13 @@ type Props = LinkProps &
   };
 
 const AuthenticationLink = forwardRef<HTMLAnchorElement, Props>(
-  ({ ...rest }, ref) => <S.AuthenticationAnchor {...rest} ref={ref} />
+  ({ isHeader, ...rest }, ref) => (
+    <S.AuthenticationAnchor
+      {...rest}
+      isheader={isHeader ? 'true' : undefined}
+      ref={ref}
+    />
+  )
 );
 
 export default AuthenticationLink;
