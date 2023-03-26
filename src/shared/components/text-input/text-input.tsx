@@ -8,7 +8,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
     return (
       <S.InputWrapper error={error} isRequired={isRequired}>
         <label>{label}</label>
-        <input {...rest} ref={ref} />
+        <input {...rest} ref={ref} autoComplete="off" />
         {error !== undefined && <span>{error}</span>}
       </S.InputWrapper>
     );
