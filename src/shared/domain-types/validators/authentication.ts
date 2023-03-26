@@ -26,7 +26,7 @@ export const registerValidationSchema = yup.object().shape({
     .string()
     .required('O campo é obrigatório')
     .min(5, 'O campo deve possuir no mínimo 8 caracteres'),
-  confirmacaoSenha: yup
+  confirmarSenha: yup
     .string()
     .required('O campo é obrigatório')
     .oneOf([yup.ref('senha'), ''], 'As senhas devem coincidir'),
