@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const PageWrapper = styled.div`
@@ -17,15 +16,8 @@ export const PageWrapper = styled.div`
   }
 `;
 
-export const RegisterLink = styled(Link)`
-  color: ${(props) => props.theme.colors.brand};
-  font-weight: 600;
-  align-self: center;
-  text-decoration: none;
-
-  @media (min-width: 600px) {
-    display: none;
-  }
+export const ContentContainer = styled.div`
+  margin: auto;
 `;
 
 export const ButtonContainer = styled.div`

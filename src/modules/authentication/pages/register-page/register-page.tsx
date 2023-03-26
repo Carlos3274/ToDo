@@ -1,7 +1,17 @@
+import { yupResolver } from '@hookform/resolvers/yup';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
-import { AuthenticationFormInput, Button, auth } from 'src/shared';
-import { AuthenticationForm, AuthenticationHeader } from '../../components';
+import {
+  AuthenticationFormInput,
+  Button,
+  auth,
+  registerValidationSchema,
+} from 'src/shared';
+import {
+  AuthenticationForm,
+  AuthenticationHeader,
+  AuthenticationLink,
+} from '../../components';
 
 import * as S from './register-page.styles';
 
@@ -10,8 +20,8 @@ const RegisterPage: React.FC = () => {
     useCreateUserWithEmailAndPassword(auth);
 
   const form = useForm<AuthenticationFormInput>({
-    mode: 'onChange',
-    // resolver: yupResolver(),
+    mode: 'all',
+    resolver: yupResolver(registerValidationSchema),
   });
 
   const onSubmit: SubmitHandler<AuthenticationFormInput> = (data) => {
@@ -21,15 +31,24 @@ const RegisterPage: React.FC = () => {
   return (
     <S.PageWrapper>
       <AuthenticationHeader isRegister />
-      <FormProvider {...form}>
-        <AuthenticationForm id="register" isRegister onSubmit={onSubmit} />
-      </FormProvider>
-      <S.ButtonContainer>
-        <Button form="register" type="submit" isLoading={loading}>
-          Cadastrar-se
-        </Button>
-        <S.RegisterLink to="/login">Já possui uma conta?</S.RegisterLink>
-      </S.ButtonContainer>
+      <S.ContentContainer>
+        <FormProvider {...form}>
+          <AuthenticationForm id="register" isRegister onSubmit={onSubmit} />
+        </FormProvider>
+        <S.ButtonContainer>
+          <Button
+            form="register"
+            type="submit"
+            isLoading={loading}
+            disabled={!form.formState.isValid}
+          >
+            Cadastrar-se
+          </Button>
+          <AuthenticationLink to="/login">
+            Já possui uma conta?
+          </AuthenticationLink>
+        </S.ButtonContainer>
+      </S.ContentContainer>
     </S.PageWrapper>
   );
 };

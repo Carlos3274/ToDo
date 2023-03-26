@@ -35,7 +35,8 @@ export const InputWrapper = styled.div<InputWrapperProps>`
 
   span {
     margin-top: 0.5rem;
-    font-size: 0.95rem;
+    margin-bottom: -0.3rem;
+    font-size: 0.8rem;
     color: ${(props) => props.theme.colors.danger};
   }
 `;

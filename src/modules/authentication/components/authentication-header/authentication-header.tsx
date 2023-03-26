@@ -1,4 +1,5 @@
 import { Logo } from 'src/shared';
+import AuthenticationLink from '../authentication-link/authentication-link';
 import * as S from './authentication-header.styles';
 
 type Props = {
@@ -10,9 +11,13 @@ const AuthenticationHeader: React.FC<Props> = ({ isRegister }) => {
     <S.Header>
       <Logo />
       {isRegister ? (
-        <S.RegisterLink to="/login">Já possui uma conta?</S.RegisterLink>
+        <AuthenticationLink to="/login" isHeader>
+          Já possui uma conta?
+        </AuthenticationLink>
       ) : (
-        <S.RegisterLink to="/register">Não possui uma conta?</S.RegisterLink>
+        <AuthenticationLink to="/register" isHeader>
+          Não possui uma conta?
+        </AuthenticationLink>
       )}
     </S.Header>
   );
