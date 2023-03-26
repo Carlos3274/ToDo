@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const FormWrapper = styled.form`
@@ -15,13 +14,6 @@ export const FormWrapper = styled.form`
       display: none;
     }
   }
-`;
-
-export const RegisterLink = styled(Link)`
-  color: ${(props) => props.theme.colors.brand};
-  font-weight: 600;
-  align-self: center;
-  text-decoration: none;
 `;
 
 export const InputContainer = styled.div`
