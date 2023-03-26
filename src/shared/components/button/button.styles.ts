@@ -22,5 +22,6 @@ export const Button = styled.button`
     background: ${(props) => props.theme.colors.brand};
     color: ${(props) => props.theme.colors.background};
     opacity: 0.5;
+    cursor: not-allowed;
   }
 `;
