@@ -12,8 +12,15 @@ export const Button = styled.button`
   border: none;
   border-radius: 4px;
   width: 100%;
+
+  &:hover {
+    filter: brightness(1.2);
+    transition: all 0.3s ease;
+  }
+
   &:disabled {
-    background: rgba(39, 196, 152, 0.5);
-    color: rgba(233, 236, 239, 0.4);
+    background: ${(props) => props.theme.colors.brand};
+    color: ${(props) => props.theme.colors.background};
+    opacity: 0.5;
   }
 `;
