@@ -12,14 +12,13 @@ export const InputWrapper = styled.div<InputWrapperProps>`
 
   input {
     background: ${(props) => props.theme.colors.primary};
-    border: 1px solid ${(props) => props.theme.colors.background};
+    border: 1px solid ${(props) => props.theme.colors.border};
     border-radius: 0.25rem;
     height: 2.375rem;
     padding: 0.5rem;
 
     &:focus-visible {
-      border: 2px solid ${(props) => props.theme.colors.brand};
-      border-color: ${(props) => props.theme.colors.brand};
+      border: 1px solid ${(props) => props.theme.colors.textSecondary};
       outline: none;
     }
   }

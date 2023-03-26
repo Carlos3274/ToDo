@@ -10,7 +10,7 @@ export const theme: DefaultTheme = {
 
     background: '#E9ECEF',
     brand: '#27C498',
-
+    border: '#6C757D',
     positive: '#3B71CA',
     success: '#14A44D',
     warning: '#E4A11B',

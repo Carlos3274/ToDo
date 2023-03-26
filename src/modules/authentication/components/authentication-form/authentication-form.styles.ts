@@ -1,11 +1,14 @@
-import { Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const FormWrapper = styled(Form)`
+export const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
+  input {
+    color: ${(props) => props.theme.colors.textSecondary};
+  }
 
   @media (min-width: 600px) {
     a {
@@ -27,21 +30,17 @@ export const InputContainer = styled.div`
   gap: 0.75rem;
 `;
 
-export const ContentWrapper = styled.div`
+export const GeralContainer = styled.div`
   background: ${(props) => props.theme.colors.primary};
   color: ${(props) => props.theme.colors.textSecondary};
-`;
-
-export const ContentContainer = styled.div`
-  margin-inline: 1.375rem;
 
   header {
     display: none;
   }
 
   @media (min-width: 600px) {
-    max-width: 19.75rem;
-    margin: auto;
+    min-width: 19.75rem;
+    margin-inline: auto;
   }
 `;
 
@@ -49,6 +48,10 @@ export const LogoWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 3.5625rem;
+
+  @media (max-height: 600px) {
+    margin-bottom: 2.5rem;
+  }
 
   @media (min-width: 600px) {
     display: none;

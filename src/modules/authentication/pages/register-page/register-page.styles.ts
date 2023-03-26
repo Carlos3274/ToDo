@@ -2,10 +2,19 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const PageWrapper = styled.div`
+  padding: 2.5rem 1.375rem;
   background: ${(props) => props.theme.colors.primary};
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
+
+  @media (max-height: 600px) {
+    padding: 1.8rem 1.375rem;
+  }
+
+  @media (min-width: 600px) {
+    padding: initial;
+  }
 `;
 
 export const RegisterLink = styled(Link)`
@@ -20,10 +29,13 @@ export const RegisterLink = styled(Link)`
 `;
 
 export const ButtonContainer = styled.div`
-  min-width: 19.75rem;
-  margin-inline: auto;
   margin-top: 1.5rem;
-  button {
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @media (min-width: 600px) {
+    min-width: 19.75rem;
+    align-self: center;
   }
 `;

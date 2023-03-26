@@ -15,17 +15,15 @@ const LoginPage: React.FC = () => {
   });
 
   // const onSubmit: SubmitHandler<AuthenticationFormInput> = (data) => {
-  //   setIsLoading(true);
-  //   login(data.email, data.password).then(() => {
-  //     setIsLoading(false);
-  //   });
+
   // };
-  //
+
   return (
     <S.PageWrapper>
       <AuthenticationHeader />
       <FormProvider {...form}>
         <AuthenticationForm
+          id="login"
           onSubmit={function (
             data: AuthenticationFormInput,
             event?: BaseSyntheticEvent<object, any, any> | undefined
@@ -36,7 +34,7 @@ const LoginPage: React.FC = () => {
       </FormProvider>
       <S.ButtonContainer>
         <Button type="submit">Entrar</Button>
-        <S.RegisterLink to="/login">Não possui uma conta?</S.RegisterLink>
+        <S.RegisterLink to="/register">Não possui uma conta?</S.RegisterLink>
       </S.ButtonContainer>
     </S.PageWrapper>
   );

@@ -13,20 +13,22 @@ const RegisterPage: React.FC = () => {
     // resolver: yupResolver(),
   });
 
-  const formValues = form.getValues();
-
   const onSubmit: SubmitHandler<AuthenticationFormInput> = (data) => {
-    CreateUserWithEmailAndPassword(formValues.email, formValues.senha);
+    console.log('caiu');
+    console.log(data);
+    CreateUserWithEmailAndPassword(data.email, data.senha);
   };
 
   return (
     <S.PageWrapper>
       <AuthenticationHeader isRegister />
       <FormProvider {...form}>
-        <AuthenticationForm isRegister onSubmit={onSubmit} />
+        <AuthenticationForm id="register" isRegister onSubmit={onSubmit} />
       </FormProvider>
       <S.ButtonContainer>
-        <Button type="submit">Cadastrar-se</Button>
+        <Button form="register" type="submit">
+          Cadastrar-se
+        </Button>
         <S.RegisterLink to="/login">Já possui uma conta?</S.RegisterLink>
       </S.ButtonContainer>
     </S.PageWrapper>

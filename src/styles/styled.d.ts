@@ -12,6 +12,7 @@ declare module 'styled-components' {
 
       background: string;
       brand: string;
+      border: string;
 
       positive: string;
       success: string;
