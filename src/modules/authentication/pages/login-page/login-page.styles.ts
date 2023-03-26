@@ -13,7 +13,9 @@ export const PageWrapper = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  margin: auto;
+  @media (min-width: 600px) {
+    margin: auto;
+  }
 `;
 
 export const ButtonContainer = styled.div`
