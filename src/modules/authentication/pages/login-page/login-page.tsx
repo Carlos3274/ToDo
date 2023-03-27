@@ -1,4 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
+import { Alert } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import {
@@ -7,6 +8,7 @@ import {
   auth,
   loginValidationSchema,
 } from 'src/shared';
+import { handleError } from 'src/shared/core/errors';
 import {
   AuthenticationForm,
   AuthenticationHeader,
@@ -29,6 +31,8 @@ const LoginPage: React.FC = () => {
   return (
     <S.PageWrapper>
       <AuthenticationHeader />
+      {error && <Alert variant="danger">{handleError(error)}</Alert>}
+
       <S.ContentContainer>
         <FormProvider {...form}>
           <AuthenticationForm id="login" onSubmit={onSubmit} />
