@@ -13,12 +13,15 @@ import {
   AuthenticationLink,
 } from '../../components';
 
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as S from './register-page.styles';
 
 const RegisterPage: React.FC = () => {
   const [CreateUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
 
+  const navigate = useNavigate();
   const form = useForm<AuthenticationFormInput>({
     mode: 'all',
     resolver: yupResolver(registerValidationSchema),
@@ -27,6 +30,12 @@ const RegisterPage: React.FC = () => {
   const onSubmit: SubmitHandler<AuthenticationFormInput> = (data) => {
     CreateUserWithEmailAndPassword(data.email, data.senha);
   };
+
+  useEffect(() => {
+    if (user) {
+      navigate('/login');
+    }
+  }, [navigate, user]);
 
   return (
     <S.PageWrapper>

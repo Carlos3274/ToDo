@@ -1,5 +1,6 @@
 import { SubmitHandler, useFormContext } from 'react-hook-form';
 import {
+  AuthenticationFormId,
   AuthenticationFormInput,
   FormTitle,
   Logo,
@@ -14,8 +15,14 @@ type Props = {
 };
 
 const AuthenticationForm: React.FC<Props> = ({ isRegister, onSubmit, id }) => {
-  const { handleSubmit, register, formState } =
+  const { handleSubmit, register, formState, watch } =
     useFormContext<AuthenticationFormInput>();
+
+  const formValues = watch(['nome', 'email', 'senha', 'confirmarSenha']);
+
+  const isRequired = (value: AuthenticationFormId): boolean | undefined => {
+    return isRegister && formValues[value] === '';
+  };
 
   return (
     <S.GeralContainer>
@@ -30,7 +37,7 @@ const AuthenticationForm: React.FC<Props> = ({ isRegister, onSubmit, id }) => {
               label="Nome"
               type="text"
               placeholder="Digite seu nome"
-              isRequired={isRegister && true}
+              isRequired={isRequired(AuthenticationFormId.nome)}
               error={formState.errors.nome?.message}
               {...register('nome')}
             />
@@ -39,7 +46,7 @@ const AuthenticationForm: React.FC<Props> = ({ isRegister, onSubmit, id }) => {
             label="E-mail"
             type="email"
             placeholder="exemplo@email.com"
-            isRequired={isRegister && true}
+            isRequired={isRequired(AuthenticationFormId.email)}
             error={formState.errors.email?.message}
             {...register('email')}
           />
@@ -47,7 +54,7 @@ const AuthenticationForm: React.FC<Props> = ({ isRegister, onSubmit, id }) => {
             label="Senha"
             type="password"
             placeholder="Digite sua senha"
-            isRequired={isRegister && true}
+            isRequired={isRequired(AuthenticationFormId.senha)}
             error={formState.errors.senha?.message}
             {...register('senha')}
           />
@@ -56,7 +63,7 @@ const AuthenticationForm: React.FC<Props> = ({ isRegister, onSubmit, id }) => {
               label="Confirmar senha"
               type="password"
               placeholder="Confirme a senha"
-              isRequired={isRegister && true}
+              isRequired={isRequired(AuthenticationFormId.confirmarSenha)}
               error={formState.errors.confirmarSenha?.message}
               {...register('confirmarSenha')}
             />

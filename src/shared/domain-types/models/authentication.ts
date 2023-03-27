@@ -4,3 +4,10 @@ export type AuthenticationFormInput = {
   senha: string;
   confirmarSenha: string;
 };
+
+export enum AuthenticationFormId {
+  'nome' = 0,
+  'email',
+  'senha',
+  'confirmarSenha',
+}
