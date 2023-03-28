@@ -6,7 +6,9 @@ export const handleError = (error: AuthError) => {
       return 'E-mail já está em uso';
     case 'auth/wrong-password':
       return 'Senha incorreta';
+    case 'auth/user-not-found':
+      return 'Usuário não encontrado';
     default:
-      return error.code;
+      return 'Algo de errado aconteceu';
   }
 };
