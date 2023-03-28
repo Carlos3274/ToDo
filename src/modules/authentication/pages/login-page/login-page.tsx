@@ -8,13 +8,13 @@ import {
   auth,
   loginValidationSchema,
 } from 'src/shared';
-import { handleError } from 'src/shared/core/errors';
+import { AuthErrorHandler } from 'src/shared/core/errors';
 import {
   AuthenticationForm,
   AuthenticationHeader,
   AuthenticationLink,
 } from '../../components';
-import { notifyError } from '../../utils';
+import { notifyError, notifySuccess } from '../../utils';
 import * as S from './login-page.styles';
 
 const LoginPage: React.FC = () => {
@@ -28,9 +28,15 @@ const LoginPage: React.FC = () => {
 
   useEffect(() => {
     if (error) {
-      notifyError(handleError(error));
+      notifyError(AuthErrorHandler.handleError(error));
     }
   }, [error]);
+
+  useEffect(() => {
+    if (user) {
+      notifySuccess('Usuário Logado');
+    }
+  }, [user]);
 
   const onSubmit: SubmitHandler<AuthenticationFormInput> = (data) => {
     SignInWithEmailAndPassword(data.email, data.senha);

@@ -1,25 +1,25 @@
 import { ToastOptions, toast } from 'react-toastify';
 
 export const notifyErrorConfigs: ToastOptions = {
-  position: 'top-center',
+  position: 'bottom-right',
   autoClose: 5000,
   hideProgressBar: false,
   closeOnClick: true,
   pauseOnHover: true,
   draggable: true,
   progress: undefined,
-  theme: 'colored',
+  theme: 'light',
 };
 
 export const notifySuccessConfigs: ToastOptions = {
-  position: 'top-center',
+  position: 'bottom-right',
   autoClose: 5000,
   hideProgressBar: false,
   closeOnClick: true,
   pauseOnHover: true,
   draggable: true,
   progress: undefined,
-  theme: 'colored',
+  theme: 'light',
 };
 
 export const notifyError = (msg: string) =>

@@ -16,7 +16,7 @@ import {
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { handleError } from 'src/shared/core/errors';
+import { AuthErrorHandler } from 'src/shared/core/errors';
 import { notifyError, notifySuccess } from '../../utils';
 import * as S from './register-page.styles';
 
@@ -43,7 +43,7 @@ const RegisterPage: React.FC = () => {
 
   useEffect(() => {
     if (error) {
-      notifyError(handleError(error));
+      notifyError(AuthErrorHandler.handleError(error));
     }
   }, [error]);
 
