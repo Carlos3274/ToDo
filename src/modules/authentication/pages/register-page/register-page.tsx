@@ -14,10 +14,10 @@ import {
 } from '../../components';
 
 import { useEffect } from 'react';
-import { Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 import { handleError } from 'src/shared/core/errors';
+import { notifyError, notifySuccess } from '../../utils';
 import * as S from './register-page.styles';
 
 const RegisterPage: React.FC = () => {
@@ -36,14 +36,20 @@ const RegisterPage: React.FC = () => {
 
   useEffect(() => {
     if (user) {
+      notifySuccess('Cadastro Realizado');
       navigate('/login');
     }
   }, [navigate, user]);
 
+  useEffect(() => {
+    if (error) {
+      notifyError(handleError(error));
+    }
+  }, [error]);
+
   return (
     <S.PageWrapper>
       <AuthenticationHeader isRegister />
-      {error && <Alert variant="danger">{handleError(error)}</Alert>}
       <S.ContentContainer>
         <FormProvider {...form}>
           <AuthenticationForm id="register" isRegister onSubmit={onSubmit} />
