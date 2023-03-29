@@ -6,7 +6,7 @@ import {
   AuthenticationFormInput,
   Button,
   auth,
-  loginValidationSchema,
+  authenticationValidationSchema,
 } from 'src/shared';
 import { AuthErrorHandler } from 'src/shared/core/errors';
 import {
@@ -23,7 +23,7 @@ const LoginPage: React.FC = () => {
 
   const form = useForm<AuthenticationFormInput>({
     mode: 'onChange',
-    resolver: yupResolver(loginValidationSchema),
+    resolver: yupResolver(authenticationValidationSchema),
   });
 
   useEffect(() => {

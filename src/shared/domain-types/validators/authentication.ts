@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-export const loginValidationSchema = yup.object({
+export const authenticationValidationSchema = yup.object({
   email: yup
     .string()
     .required('O campo é obrigatório')
@@ -12,20 +12,11 @@ export const loginValidationSchema = yup.object({
     .max(80, 'O campo atingiu o limite máximo de 80 caracteres'),
 });
 
-export const registerValidationSchema = yup.object().shape({
+export const registerValidationSchema = authenticationValidationSchema.shape({
   nome: yup
     .string()
     .required('O campo é obrigatório')
     .max(80, 'O campo atingiu o limite máximo de 80 caracteres'),
-  email: yup
-    .string()
-    .required('O campo é obrigatório')
-    .email('Insira um email válido')
-    .max(80, 'O campo atingiu o limite máximo de 80 caracteres'),
-  senha: yup
-    .string()
-    .required('O campo é obrigatório')
-    .min(5, 'O campo deve possuir no mínimo 8 caracteres'),
   confirmarSenha: yup
     .string()
     .required('O campo é obrigatório')
