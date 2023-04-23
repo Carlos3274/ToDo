@@ -8,7 +8,7 @@ export const notifyErrorConfigs: ToastOptions = {
   pauseOnHover: true,
   draggable: true,
   progress: undefined,
-  theme: 'light',
+  theme: 'colored',
 };
 
 export const notifySuccessConfigs: ToastOptions = {
@@ -19,7 +19,7 @@ export const notifySuccessConfigs: ToastOptions = {
   pauseOnHover: true,
   draggable: true,
   progress: undefined,
-  theme: 'light',
+  theme: 'colored',
 };
 
 export const notifyError = (msg: string) =>
