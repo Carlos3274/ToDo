@@ -1,21 +1,44 @@
+import { MdOutlineWatchLater } from 'react-icons/md';
 import { TfiMenuAlt } from 'react-icons/tfi';
 import * as S from './task-card.styles';
 
-const TaskCard: React.FC = () => {
+export type TaskStatus = 'Em atraso' | 'Último dia' | 'Para fazer';
+
+type TaskProps = {
+  status: TaskStatus;
+  title: string;
+  description: string;
+  time: string;
+};
+
+const TaskCard: React.FC<TaskProps> = ({
+  status,
+  title,
+  description,
+  time,
+}) => {
   return (
     <S.TaskCardWrapper>
-      <S.TaskCardStatusTitle>Em atraso</S.TaskCardStatusTitle>
+      <S.TaskCardStatus status={status}>{status}</S.TaskCardStatus>
       <S.CardDivider />
 
-      <S.TaskDetailsContainer>
+      <S.TaskDetailsContainer status={status}>
         <S.TaskDetailsWrapper>
-          <S.TaskDetaisTitle>Título da Task</S.TaskDetaisTitle>
-          <S.TaskDetailsDescription>Descrição da task</S.TaskDetailsDescription>
+          <S.TaskDetaisTitle>{title}</S.TaskDetaisTitle>
+          <S.TaskDetailsDescription>{description}</S.TaskDetailsDescription>
         </S.TaskDetailsWrapper>
       </S.TaskDetailsContainer>
-      <div>
-        <TfiMenuAlt fill="rgba(51, 51, 51, 0.4)" />
-      </div>
+      <S.TaskFooter>
+        <span>
+          <TfiMenuAlt fill="rgba(51, 51, 51, 0.4)" />
+          Tarefas
+        </span>
+
+        <span>
+          <MdOutlineWatchLater fill="rgba(51, 51, 51, 0.4)" size={16} />
+          {time}
+        </span>
+      </S.TaskFooter>
     </S.TaskCardWrapper>
   );
 };

@@ -16,7 +16,24 @@ const DashboardPage: React.FC = () => {
           <span>Página para gerenciamento de tarefas</span>
           <button>Novo</button>
         </S.DashboardHeader>
-        <TaskCard />
+        <TaskCard
+          title="Título da Task"
+          status="Em atraso"
+          description="Descrição da task"
+          time="24 de Outubro, 10:15"
+        />
+        <TaskCard
+          title="Título da Task"
+          status="Para fazer"
+          description="Descrição da task"
+          time="24 de Outubro, 10:15"
+        />
+        <TaskCard
+          title="Título da Task"
+          status="Último dia"
+          description="Descrição da task"
+          time="24 de Outubro, 10:15"
+        />
       </S.DashboardWrapper>
     </S.PageWrapper>
   );

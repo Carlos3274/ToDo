@@ -23,6 +23,10 @@ export const DashboardWrapper = styled.div`
   padding-inline: 1.25rem;
   background: ${(props) => props.theme.colors.background};
   flex: 1 1 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 `;
 
 export const DashboardHeader = styled.div`
